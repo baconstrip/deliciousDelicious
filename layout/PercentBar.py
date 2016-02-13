@@ -6,6 +6,6 @@ class PercentBar(Element):
         Element.__init__(self,name, index)
         self.percentage = percent
 
-    def getPercentage():
+    def getPercentage(self):
         return self.percentage
 

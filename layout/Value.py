@@ -6,6 +6,6 @@ class Value(Element):
         self.value = value
 
 
-    def getValue():
-        return value
+    def getValue(self):
+        return self.value
 

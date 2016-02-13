@@ -1,5 +1,7 @@
-from layout import *
-
+from layout import Label
+from layout import Container
+from layout import Value
+from layout import PercentBar
 module_head = '<div class="col-lg-4 col-md-6 col-sm-12">'
 module_foot = '</div>'
 
@@ -19,15 +21,15 @@ def htmlForDisplay(module, recur=False):
     else:
         builder = container_head
     for element in module.getLayout():
-        if isinstance(element, Label):
+        if isinstance(element, Label.Label):
             builder += label_head
             builder += element.getText()
-            buidler += label_foot
-        elif isinstance(element, PercentBar):
+            builder += label_foot
+        elif isinstance(element, PercentBar.PercentBar):
             builder += percentage_bar.format(element.getPercentage())
-        elif isinstance(element, Value):
+        elif isinstance(element, Value.Value):
             builder += value.format(element.getValue())
-        elif isinstance(element, Container):
+        elif isinstance(element, Container.Container):
             builder += htmlForDisplay(element, True)
     if not recur:
         builder += module_foot

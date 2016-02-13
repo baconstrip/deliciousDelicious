@@ -10,7 +10,7 @@ class Test(Display):
     def __init__(self): 
         Display.__init__(self)
         self.addElement(Container("Container", 0))	
-        self.addElement(Label("Label", 1))
-        self.addElement(PercentBar("PercentageBar", 2))
-        self.addElement(Value("Value", 3))
+        self.addElement(Label("Label", 1, "test"))
+        self.addElement(PercentBar("PercentageBar", 2, 10))
+        self.addElement(Value("Value", 3, 5))
 		

@@ -5,7 +5,7 @@ class Label(Element):
         Element.__init__(self, name, index)
         self.text = text
         
-    def getText():
+    def getText(self):
         return self.text
 
 	
