@@ -1,0 +1,5 @@
+{
+    "name": "TestModule",
+    "pyfile": "test.py",
+    "classname": "Test"
+}
