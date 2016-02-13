@@ -28,7 +28,7 @@ def loadDisplays():
         definition = json.load(open(os.getcwd() + "/displays/" + jsonfile))
         pyfile = definition.get("pyfile")
         classname = definition.get("classname")
-        name = defintion.get("name")
+        name = definition.get("name")
         # Load and execute the pyfile specified
         exec(open(os.getcwd() + "/displays/" + pyfile).read(),globals())
         # Exec the module's constructor
@@ -40,7 +40,6 @@ def loadDisplays():
 
     return modules
 
-return modules
 if __name__ == "__main__":
     displays = loadDisplays()
     print(displays)

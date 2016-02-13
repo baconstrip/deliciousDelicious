@@ -20,6 +20,7 @@ def htmlForDisplay(module, recur=False):
         builder = module_head
     else:
         builder = container_head
+    print (module)
     for element in module.getLayout():
         if isinstance(element, Label.Label):
             builder += label_head
