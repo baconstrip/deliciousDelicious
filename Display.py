@@ -1,7 +1,11 @@
 class Display:
-    def __init__(self):
+    def __init__(self, data):
         self.layout = []
+        self.data = data
 
+    def getData(self):
+        return self.data
+    
     def getLayout(self):
         return self.layout
 
