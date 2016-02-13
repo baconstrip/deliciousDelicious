@@ -36,11 +36,17 @@
       </div>
     </nav>
     <div class="container main-body-border">
-      <hr>
-      {% block body %}{% endblock %}
-      <footer>
-        <p>&copy; DeliciousDelicious 2016</p>
-      </footer>
+        <div class="row">
+          {% block body %}{% endblock %}
+        </div>
+        <div class="row">
+            <div class="container">
+              <hr>
+              <footer>
+                <p>&copy; DeliciousDelicious 2016</p>
+              </footer>
+            </div>
+        </div>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 

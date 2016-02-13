@@ -7,7 +7,27 @@ import json
 import re
 import os
 
-def loadDisplays():
+        
+def createDisplays():
+    displays = loadDisplays(globals())
+    with open('config.json', 'r') as json_data:
+        configs = json.load(json_data)
+
+    panels = []
+
+    for config in configs:
+        # Exec the module's constructor
+        pprint(config)
+        constructor = globals()[displays.get(config['display'])]
+        # instantiate
+        instance = constructor(config['data'])
+        panels.append(instance)
+
+    return panels
+
+
+def loadDisplays(gvalues):
+    
     f = []
     for (dirpath, dirnames, filenames) in walk(os.getcwd() + "/displays/"):
         f.extend(filenames)
@@ -30,7 +50,7 @@ def loadDisplays():
         classname = definition.get("classname")
         name = definition.get("name")
         # Load and execute the pyfile specified
-        exec(open(os.getcwd() + "/displays/" + pyfile).read(),globals())
+        exec(open(os.getcwd() + "/displays/" + pyfile).read(),gvalues)
         # Exec the module's constructor
        # constructor = globals()[classname]
         # instantiate

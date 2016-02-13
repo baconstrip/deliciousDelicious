@@ -8,8 +8,8 @@ from layout.Value import Value
 class cpuUsage(Display):
     name = "cpuUsage"
 
-    def __init__(self):
-        Display.__init__(self)
+    def __init__(self, data):
+        Display.__init__(self, data)
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         filename=open("./Login.txt")

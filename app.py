@@ -1,9 +1,10 @@
 from flask import Flask
 from flask import render_template
-import DisplayLoader
+from DisplayLoader import * 
 import LayoutGenerator
 
 app = Flask(__name__)
+panels = createDisplays()
 
 @app.route("/")
 def hello():
@@ -11,11 +12,10 @@ def hello():
 
 @app.route("/ajax/update")
 def updater():
-    displays = DisplayLoader.loadDisplays()
-    panels = []
-    for display in displays:
-        panels.append(LayoutGenerator.htmlForDisplay(display))
-    return render_template("contents.html", displays=panels)
+    htmlList = []
+    for panel in panels:
+        htmlList.append(LayoutGenerator.htmlForDisplay(panel))
+    return render_template("contents.html", displays=htmlList)
 
 if __name__ == "__main__":
     app.run(debug=True)

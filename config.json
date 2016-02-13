@@ -1,7 +1,7 @@
 [
     {
         "name":"LinServer1",
-        "display":"cpuUsage",
+        "display":"cpuUsageDisplay",
         "pos":"1",
         "data": {
             "ipAddress":"localhost",
