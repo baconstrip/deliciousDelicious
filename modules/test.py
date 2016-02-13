@@ -1,2 +1,0 @@
-class Test:
-    name = "test"

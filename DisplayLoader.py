@@ -4,7 +4,7 @@ import json
 import re
 import os
 
-def loadModules():
+def loadDisplays():
     f = []
     for (dirpath, dirnames, filenames) in walk(os.getcwd() + "/modules/"):
         f.extend(filenames)
@@ -33,3 +33,10 @@ def loadModules():
         modules.append(instance)
 
     return modules
+
+
+if __name__ == "__main__":
+    displays = loadDisplays()
+
+    for display in displays:
+        print(htmlForDisplay(display))
