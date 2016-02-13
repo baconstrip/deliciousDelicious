@@ -3,7 +3,9 @@
 {% block title %}DeliciousMon{% endblock %}
 
 {% block body %}
-
+    {% for panel in apps %}
+        {{ panel|safe }}
+    {% endfor %}
 {% endblock %}
 
 {% block scripts %}
