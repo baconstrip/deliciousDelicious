@@ -1,11 +1,11 @@
-{[{"name":"test","ID":"123","data" :{"ip":"34.123.34.53"}},
-
-
-
+{
+    [{name":"LinServer1",
+        "display":"cpuUsage"
+        "pos":"1",
+        "data":{
+        "ipAddress":"localhost"
+        username:"admin"
+        password:"password"
+        }}]
 }
-
-
-
-
-
 
