@@ -4,6 +4,7 @@ class Container(Element):
     def __init__(self, name, index):
         Element.__init__(self, name,index)
         self.elements=[]
+        elementType='container'
 
     def getLayout(self):
         return self.elements
@@ -16,5 +17,7 @@ class Container(Element):
             if name == element.getName():
                 self.elements.remove(element)
                 return
-
-
+    def removeAll(self):
+        for element in self.elements:
+            self.elements.remove(element)
+        return

@@ -4,8 +4,7 @@ class Label(Element):
     def __init__(self, name, index, text = None):
         Element.__init__(self, name, index)
         self.text = text
-        
-    def getText(self):
-        return self.text
+        self.elementType = 'label'
 
-	
+    def getText(self):
+        return self.text	
