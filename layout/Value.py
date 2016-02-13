@@ -1,6 +1,11 @@
-class Value(LayoutElement):
-	value
+from layout.LayoutElement import LayoutElement as Element
 
-	def getValue():
-		return value
+class Value(Element):
+    def __init__(self, name, index, value = None):
+        Element.__init__(self, name,index)
+        self.value = value
+
+
+    def getValue():
+        return value
 

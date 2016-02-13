@@ -1,4 +1,4 @@
-import layout
+from layout import *
 
 module_head = '<div class="col-lg-4 col-md-6 col-sm-12">'
 module_foot = '</div>'

@@ -1,12 +1,15 @@
 from os import walk
 from pprint import pprint
+from Display import Display
+from LayoutGenerator import *
+
 import json
 import re
 import os
 
 def loadDisplays():
     f = []
-    for (dirpath, dirnames, filenames) in walk(os.getcwd() + "/modules/"):
+    for (dirpath, dirnames, filenames) in walk(os.getcwd() + "/displays/"):
         f.extend(filenames)
         break
 
@@ -21,11 +24,12 @@ def loadDisplays():
     modules = []
 
     for jsonfile in jsonfiles:
-        definition = json.load(open(os.getcwd() + "/modules/" + jsonfile))
+        print("loading display {}".format(jsonfile))
+        definition = json.load(open(os.getcwd() + "/displays/" + jsonfile))
         pyfile = definition.get("pyfile")
         classname = definition.get("classname")
         # Load and execute the pyfile specified
-        exec(open(os.getcwd() + "/modules/" + pyfile).read())
+        exec(open(os.getcwd() + "/displays/" + pyfile).read(),globals())
         # Exec the module's constructor
         constructor = globals()[classname]
         # instantiate
@@ -37,6 +41,7 @@ def loadDisplays():
 
 if __name__ == "__main__":
     displays = loadDisplays()
+    print(displays)
 
     for display in displays:
         print(htmlForDisplay(display))

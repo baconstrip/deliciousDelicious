@@ -1,11 +1,12 @@
 class Display:
-    layout = []
+    def __init__(self):
+        self.layout = []
 
-    def getLayout():
-        return layout
+    def getLayout(self):
+        return self.layout
 
-    def addElement(element):
-        layout.append(element)
+    def addElement(self,element):
+        self.layout.append(element)
 
-    def updateLayout():
+    def updateLayout(self):
         return

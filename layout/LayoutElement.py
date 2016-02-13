@@ -1,11 +1,8 @@
 class LayoutElement:
-	index
-	name
-
-	def __init__(initName, initIndex):
+	def __init__(self, initName, initIndex):
 		name=initName
 		index=initIndex
-	def getIndex():
+	def getIndex(self):
 		return index
-	def getName():
+	def getName(self):
 		return name
