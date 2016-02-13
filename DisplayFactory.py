@@ -1,6 +1,6 @@
 import json
 
-class DisplayFactor:
+class DisplayFactory:
     
     def __init__():
 

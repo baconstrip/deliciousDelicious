@@ -1,11 +1,13 @@
-{
-    [{name":"LinServer1",
-        "display":"cpuUsage"
+[
+    {
+        "name":"LinServer1",
+        "display":"cpuUsage",
         "pos":"1",
-        "data":{
-        "ipAddress":"localhost"
-        username:"admin"
-        password:"password"
-        }}]
-}
+        "data": {
+            "ipAddress":"localhost",
+            "username":"admin",
+            "password":"password"
+        }
+    }
+]
 
