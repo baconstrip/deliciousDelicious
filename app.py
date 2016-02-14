@@ -19,12 +19,20 @@ def hello():
 @app.route("/ajax/update")
 def updater():
     delta = current_milli_time() - last
+    statuses = []
     for panel in panels:
-        panel.update(delta)
+        statuses.append(panel.update(delta))
     delta = current_milli_time()
     htmlList = []
+    index = 0
     for panel in panels:
-        htmlList.append(LayoutGenerator.htmlForDisplay(panel))
+        if not statuses[i]:
+            statuses[i] = ("Good", 0)
+        elif not statuses[i][1]:
+            statuses[i][1] = 0
+        htmlList.append((statuses[i][0],status[i][1],LayoutGenerator.htmlForDisplay(panel)))
+        index = index + 1 
+
     return render_template("contents.html", displays=htmlList)
 
 if __name__ == "__main__":

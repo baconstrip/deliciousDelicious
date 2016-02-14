@@ -17,6 +17,10 @@ class Display:
         self.layout.append(element)
 
     # Override me!
+    # Should return a tuple, (status_summary, code)
+    # where status_summary is a short, human readable status report
+    # and code is 0, 1, 2, or 3
+    # None or 0 makes the background green, 3 makes the background Red
     def update(self, delta):
         pass
 

@@ -7,13 +7,14 @@
             "ipAddress":"localhost",
             "username":"admin",
             "password":"password"
--    },
--    {
--        "name":"TestMCServer",
--        "display":"DeliciousMCDisplay",
--        "pos":2,
--        "data": {}
         }
+    },
+    {
+        "name":"TestMCServer",
+        "display":"DeliciousMCDisplay",
+        "pos":2,
+        "data": {}
+        
     }
 ]
 

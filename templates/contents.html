@@ -1,3 +1,8 @@
-{% for panel in displays %} 
+{% for message, color, panel in displays %} 
+    <div class = "
+    {% "bg-success" if color == 0 %}
+    {% "bg-danger" if color == 3 %}">
+        <p>{{ message }}</p>
     {{ panel|safe }} 
+    </div>
 {% endfor %} 

@@ -15,15 +15,19 @@ class DeliciousMC(Display):
 
     def update(self, delta):
         print(delta)
-        values = self.grabData()
+        try:
+            values = self.grabData()
+        except ConnectionRefusedError:
+            return ("Server Unreachable!", 3)
         self.updateLayout("players", values[0] + '/' + values[1])
         self.updateLayout("uptime", values[2])
 
     def grabData(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-        s.connect(("localhost", 24921))
-
+        try:
+            s.connect(("localhost", 24921))
+        except ConnectionRefusedError as e:
+            raise e
         totalsent = 0
 
         msg = b"DeliciousMCsupersecret\n"
