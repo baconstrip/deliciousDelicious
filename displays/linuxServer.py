@@ -38,13 +38,13 @@ class LinuxServer(Display):
         
         # Create all of the elements.
         self.addElement(Container("Container", 0))
-        self.addElement(Label("Label1", 1, "CPU Usage"))
+        self.addElement(Label("Label1", 1, "CPU Usage (%)"))
         self.addElement(PercentBar("PercentageBar", 2, stdoutData1))
-        self.addElement(Label("Label2", 2, "Free Memory"))
+        self.addElement(Label("Label2", 2, "Free Memory (%)"))
         self.addElement(PercentBar("PercentageBar2", 4, stdoutData2.decode("UTF-8")))
-        self.addElement(Label("Label3", 3, "Maximum Memory"))
+        self.addElement(Label("Label3", 3, "Maximum Memory (kB)"))
         self.addElement(Label("Label4", 4, stdoutData2.decode("UTF-8")))
-        self.addElement(Label("Label5", 5, "Storage:"))
+        self.addElement(Label("Label5", 5, "Storage (kB):"))
         count=0
         for line in stdoutData3:
                 labelName = "Label" + str(count+6)
@@ -72,13 +72,13 @@ class LinuxServer(Display):
         stdin4, stdout4, stderr4 = self.ssh.exec_command("df | awk \'{print $5}\' | sed 's/%//'")
         stdoutData4 = stdout4.readlines()
 
-        self.updateLayout("Label1",  "CPU Usage:")
+        self.updateLayout("Label1",  "CPU Usage (%):")
         self.updateLayout("PercentageBar",  stdoutData1)
-        self.updateLayout("Label2",  "Free Memory:")
+        self.updateLayout("Label2",  "Free Memory (%):")
         self.updateLayout("PercentageBar2",  stdoutData1)
-        self.updateLayout("Label3",  "Maximum Memory:")
+        self.updateLayout("Label3",  "Maximum Memory (kB):")
         self.updateLayout("Label4",  stdoutData2)
-        self.updateLayout("Label5",  "Storage:")
+        self.updateLayout("Label5",  "Storage (kB):")
         
         count=0
         for line in stdoutData3:
