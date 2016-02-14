@@ -8,3 +8,13 @@
     border-left: 1px solid;
     border-right: 1px solid;
 }
+
+.monitor-display {
+    border-radius: 5px;
+    margin: 7px;
+}
+
+.monitor-head {
+    margin-top: 7px;
+    margin-bottom: -10px !important;
+}

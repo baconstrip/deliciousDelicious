@@ -2,8 +2,8 @@ from layout import Label
 from layout import Container
 from layout import Value
 from layout import PercentBar
-module_head = '<div class="col-lg-4 col-md-6 col-sm-12">'
-module_foot = '</div>'
+#module_head = '<div class="col-lg-4 col-md-6 col-sm-12">'
+#module_foot = '</div>'
 
 module_label = '<h2>{}</h2>'
 
@@ -19,8 +19,7 @@ value = '<p> {} </p>'
 
 def htmlForDisplay(module, recur=False):
     if not recur:
-        builder = module_head
-        builder += module_label.format(module.getName())
+        builder = module_label.format(module.getName())
     else:
         builder = container_head
     print (module)
@@ -35,9 +34,7 @@ def htmlForDisplay(module, recur=False):
             builder += value.format(element.getValue())
         elif isinstance(element, Container.Container):
             builder += htmlForDisplay(element, True)
-    if not recur:
-        builder += module_foot
-    else:
+    if recur:
         builder += container_foot
     return builder
 
