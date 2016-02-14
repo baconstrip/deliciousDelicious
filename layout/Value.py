@@ -4,8 +4,7 @@ class Value(Element):
     def __init__(self, name, index, value = None):
         Element.__init__(self, name,index)
         self.value = value
-        self.elementType = 'Value'
-
+        self.elementType = 'value'
 
     def getValue(self):
         return self.value

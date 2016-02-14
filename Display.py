@@ -16,6 +16,10 @@ class Display:
     def addElement(self,element):
         self.layout.append(element)
 
+    # Override me!
+    def update(self, delta):
+        pass
+
     def updateLayout(self, name, field):
         for element in self.layout:
             if element.name == name:
@@ -23,7 +27,7 @@ class Display:
                     element.text = field
                 elif element.elementType == 'value':
                     element.value = field
-                elif element.elementType == 'percentageBar':
+                elif element.elementType == 'percentBar':
                     element.percentage = field
                 elif element.elementType == 'container':
                     element.removeAll()

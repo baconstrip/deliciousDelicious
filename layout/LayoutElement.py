@@ -1,9 +1,9 @@
 class LayoutElement:
     def __init__(self, initName, initIndex):
-        name = initName
-        index = initIndex
-        elementType = 'default'
+        self.name = initName
+        self.index = initIndex
+        self.elementType = 'default'
     def getIndex(self):
-        return index
+        return self.index
     def getName(self):
-        return name
+        return self.name

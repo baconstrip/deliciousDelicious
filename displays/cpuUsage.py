@@ -23,4 +23,4 @@ class cpuUsage(Display):
         self.addElement(Label("Label", 1, "CPU Usage"))
         self.addElement(PercentBar("PercentageBar", 2, 10))
         self.addElement(Value("Value", 3, stdoutData))
-        
+    

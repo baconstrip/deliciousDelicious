@@ -13,7 +13,8 @@ class DeliciousMC(Display):
         self.addElement(Label("uptimelable", 4, "Uptime: "))
         self.addElement(Value("uptime", 5, values[2]))
 
-    def update(self):
+    def update(self, delta):
+        print(delta)
         values = self.grabData()
         self.updateLayout("players", values[0] + '/' + values[1])
         self.updateLayout("uptime", values[2])

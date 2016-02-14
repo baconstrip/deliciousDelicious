@@ -4,7 +4,7 @@ class Container(Element):
     def __init__(self, name, index):
         Element.__init__(self, name,index)
         self.elements=[]
-        elementType='container'
+        self.elementType='container'
 
     def getLayout(self):
         return self.elements

@@ -33,3 +33,6 @@ class LinuxServer(Display):
         else:
             self.addElement(Label("Label2", 4, "Not able to connect to the server!", "red"))
         
+    def update(self, delta):
+        #todo
+        pass
