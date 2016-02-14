@@ -6,7 +6,6 @@ from layout.PercentBar import PercentBar
 from layout.Value import Value
 
 class LinuxServer(Display):
-    name = "linuxServer"
 
     def __init__(self,name, data):
         Display.__init__(self,name, data)

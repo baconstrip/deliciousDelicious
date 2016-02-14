@@ -7,8 +7,8 @@ module_foot = '</div>'
 
 module_label = '<h2>{}</h2>'
 
-label_head = '<span class="label">'
-label_foot = '</span>'
+label_head = '<p>'
+label_foot = '</p>'
 
 container_head = '<div class="row">'
 container_foot = '</div>'
