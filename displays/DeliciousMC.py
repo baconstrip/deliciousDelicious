@@ -5,13 +5,10 @@ class DeliciousMC(Display):
 
     def __init__(self, name, data):
         Display.__init__(self, name, data)
-        
-        values = self.grabData()
-
         self.addElement(Label("playerLabel", 0, "Players online: ")) 
-        self.addElement(Value("players", 2, values[0] + '/' + values[1]))
+        self.addElement(Value("players", 2, '?'))
         self.addElement(Label("uptimelable", 4, "Uptime: "))
-        self.addElement(Value("uptime", 5, values[2]))
+        self.addElement(Value("uptime", 5,'?')) 
 
     def update(self, delta):
         print(delta)

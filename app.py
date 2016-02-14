@@ -1,4 +1,5 @@
 from flask import Flask
+from pprint import pprint
 from flask import render_template
 from DisplayLoader import * 
 import LayoutGenerator
@@ -24,15 +25,15 @@ def updater():
         statuses.append(panel.update(delta))
     delta = current_milli_time()
     htmlList = []
-    index = 0
+    i= 0
     for panel in panels:
         if not statuses[i]:
             statuses[i] = ("Good", 0)
         elif not statuses[i][1]:
             statuses[i][1] = 0
-        htmlList.append((statuses[i][0],status[i][1],LayoutGenerator.htmlForDisplay(panel)))
-        index = index + 1 
-
+        htmlList.append((statuses[i][0],statuses[i][1],LayoutGenerator.htmlForDisplay(panel)))
+        i= i+ 1 
+    pprint(statuses)
     return render_template("contents.html", displays=htmlList)
 
 if __name__ == "__main__":

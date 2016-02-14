@@ -1,8 +1,8 @@
-{% for message, color, panel in displays %} 
+{% for display in displays %} 
     <div class = "
-    {% "bg-success" if color == 0 %}
-    {% "bg-danger" if color == 3 %}">
-        <p>{{ message }}</p>
-    {{ panel|safe }} 
+    {{ 'bg-success' if display[1] == 0 }}
+    {{ 'bg-danger' if display[1] == 3 }}">
+        <p>{{ display[0] }}</p>
+    {{ display[2]|safe }} 
     </div>
 {% endfor %} 
