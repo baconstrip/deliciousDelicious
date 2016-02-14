@@ -5,5 +5,4 @@ function updatePage() {
     });    
 }
 
-updatePage();
-setInterval(updatePage(), 1000);
+setInterval(updatePage, 1000);
