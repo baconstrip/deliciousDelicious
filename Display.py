@@ -1,13 +1,17 @@
 class Display:
-    def __init__(self, data):
+    def __init__(self, name, data):
         self.layout = []
         self.data = data
+        self.name = name
 
     def getData(self):
         return self.data
     
     def getLayout(self):
         return self.layout
+    
+    def getName(self):
+        return self.name
 
     def addElement(self,element):
         self.layout.append(element)

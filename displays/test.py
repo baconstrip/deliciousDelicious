@@ -7,8 +7,8 @@ from layout.Value import Value
 class Test(Display):
     name = "test"
 
-    def __init__(self, data): 
-        Display.__init__(self, data)
+    def __init__(self,name, data): 
+        Display.__init__(self,name, data)
         self.addElement(Container("Container", 0))	
         self.addElement(Label("Label", 1, "test"))
         self.addElement(PercentBar("PercentageBar", 2, 10))

@@ -8,8 +8,8 @@ from layout.Value import Value
 class LinuxServer(Display):
     name = "linuxServer"
 
-    def __init__(self, data):
-        Display.__init__(self, data)
+    def __init__(self,name, data):
+        Display.__init__(self,name, data)
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         filename=open("./Login.txt")

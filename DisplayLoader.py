@@ -20,7 +20,7 @@ def createDisplays():
         pprint(config)
         constructor = globals()[displays.get(config['display'])]
         # instantiate
-        instance = constructor(config['data'])
+        instance = constructor(config['name'], config['data'])
         panels.append(instance)
 
     return panels
