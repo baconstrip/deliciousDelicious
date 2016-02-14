@@ -5,6 +5,8 @@ from layout import PercentBar
 module_head = '<div class="col-lg-4 col-md-6 col-sm-12">'
 module_foot = '</div>'
 
+module_label = '<h2>{}</h2>'
+
 label_head = '<span class="label">'
 label_foot = '</span>'
 
@@ -18,6 +20,7 @@ value = '<p> {} </p>'
 def htmlForDisplay(module, recur=False):
     if not recur:
         builder = module_head
+        builder += module_label.format(module.getName())
     else:
         builder = container_head
     print (module)
